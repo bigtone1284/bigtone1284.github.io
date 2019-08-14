@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #redirecting {
+      margin: 20px;
+    }
+    h1, h3 {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="redirecting">
+    <h1 id="redirecting-text">Redirecting</h1>
+    <h3>
+      Click <a href="https://www.therealtonydefreitas.com">here</a> if redirect fails
+    </h3>
+  </div>
+  <script>
+    (function redirecting() {
+      setTimeout(function() {
+        const redirectEl = document.querySelector('#redirecting-text');
+        
+        redirectEl.innerHTML = redirectEl.innerHTML + '.';
+
+        redirecting();
+      }, 500)
+    })();
+    
+    window.location.replace('https://www.therealtonydefreitas.com');
+  </script>
+</body>
+</html>
